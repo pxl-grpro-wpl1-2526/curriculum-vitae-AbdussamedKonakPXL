@@ -365,6 +365,46 @@ body {
     overflow-wrap: break-word;
 }
 
+/* Mobiele layout voor talenkennis - WEB-12 */
+.languages-mobile {
+    display: none;
+}
+
+.language-card {
+    background-color: var(--bg-light);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    border-left: 4px solid var(--primary-color);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--spacing-sm) var(--spacing-md);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.language-card:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow-md);
+}
+
+.language-card:last-child {
+    margin-bottom: 0;
+}
+
+.language-label {
+    font-weight: var(--font-weight-semibold);
+    color: var(--primary-color);
+    font-size: var(--font-size-small);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.language-value {
+    color: var(--text-color);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+}
+
 /* Werkervaring - WEB-05 */
 .work-list {
     list-style: none;
@@ -507,7 +547,41 @@ body {
     box-shadow: var(--shadow-md);
 }
 
-/* Responsief Ontwerp - Media Queries - WEB-11 */
+/* Responsief Ontwerp - Media Queries - WEB-11, WEB-12, WEB-13 */
+
+/* Desktop: >= 992px - WEB-13 */
+@media (min-width: 992px) {
+    .languages-table {
+        display: table;
+    }
+
+    .languages-mobile {
+        display: none;
+    }
+}
+
+/* Tablet: 576px tot 992px - WEB-13 */
+@media (min-width: 576px) and (max-width: 991px) {
+    .languages-table {
+        display: table;
+    }
+
+    .languages-mobile {
+        display: none;
+    }
+}
+
+/* Mobiel: < 576px - WEB-13 */
+@media (max-width: 575px) {
+    .languages-table {
+        display: none;
+    }
+
+    .languages-mobile {
+        display: block;
+    }
+}
+
 @media (max-width: 768px) {
     body {
         padding: var(--spacing-sm);
@@ -559,18 +633,14 @@ body {
         width: 100%;
     }
 
+    /* Tabel verbergen op tablet en kleiner - WEB-12 */
     .languages-table {
-        font-size: var(--font-size-small);
-        width: 100%;
-        display: block;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
+        display: none;
     }
 
-    .languages-table th,
-    .languages-table td {
-        padding: var(--spacing-md);
-        min-width: 100px;
+    /* Mobiele layout tonen op tablet en kleiner - WEB-12 */
+    .languages-mobile {
+        display: block;
     }
 
     .footer {
