@@ -1,4 +1,4 @@
-/* Reset and Base Styles */
+/* Reset en Basis Stijlen */
 * {
     margin: 0;
     padding: 0;
@@ -35,7 +35,7 @@ body {
     overflow: hidden;
 }
 
-/* Header Styles */
+/* Header Stijlen */
 .header {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: white;
@@ -122,7 +122,7 @@ body {
     opacity: 0.9;
 }
 
-/* Section Styles */
+/* Sectie Stijlen */
 .section {
     padding: 40px 30px;
     border-bottom: 1px solid var(--border-color);
@@ -145,14 +145,14 @@ body {
     padding: 0;
 }
 
-/* Introduction */
+/* Introductie */
 .intro-text {
     font-size: 1.1rem;
     line-height: 1.8;
     color: var(--text-color);
 }
 
-/* Education */
+/* Opleiding */
 .education-item {
     margin-bottom: 25px;
     padding: 20px;
@@ -200,7 +200,7 @@ body {
     color: var(--text-light);
 }
 
-/* Skills */
+/* Vaardigheden */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -232,7 +232,7 @@ body {
     box-shadow: var(--shadow-md);
 }
 
-/* Languages Table - WEB-04 */
+/* Talenkennis Tabel - WEB-04 */
 .languages-table {
     width: 100%;
     border-collapse: collapse;
@@ -258,12 +258,12 @@ body {
     transition: background-color 0.2s ease;
 }
 
-/* Even rows (2nd, 4th, etc.) - WEB-04 */
+/* Even rijen (2e, 4e, etc.) - WEB-04 */
 .languages-table tbody tr:nth-child(even) {
     background-color: #f3f4f6;
 }
 
-/* Odd rows (1st, 3rd, etc.) - WEB-04 */
+/* Oneven rijen (1e, 3e, etc.) - WEB-04 */
 .languages-table tbody tr:nth-child(odd) {
     background-color: #ffffff;
 }
@@ -278,7 +278,7 @@ body {
     font-size: 1rem;
 }
 
-/* Work Experience - WEB-05 */
+/* Werkervaring - WEB-05 */
 .work-list {
     list-style: none;
     padding: 0;
@@ -324,7 +324,7 @@ body {
     line-height: 1.7;
 }
 
-/* Hobbies */
+/* Hobby's */
 .hobbies-list {
     display: flex;
     flex-wrap: wrap;
@@ -347,16 +347,60 @@ body {
     box-shadow: var(--shadow-md);
 }
 
-/* Footer */
+/* Footer - WEB-06 */
 .footer {
     background-color: var(--bg-light);
     padding: 20px 30px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
     color: var(--text-light);
     font-size: 0.9rem;
 }
 
-/* Responsive Design - Media Queries */
+.footer-left {
+    text-align: left;
+}
+
+.footer-left p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.footer-center {
+    text-align: center;
+    flex: 1;
+}
+
+.footer-center p {
+    margin: 0;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.back-to-top {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.back-to-top:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Responsief Ontwerp - Media Queries */
 @media (max-width: 768px) {
     body {
         padding: 10px;
@@ -404,6 +448,19 @@ body {
     .languages-table th,
     .languages-table td {
         padding: 12px;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        text-align: center;
+        width: 100%;
     }
 }
 
