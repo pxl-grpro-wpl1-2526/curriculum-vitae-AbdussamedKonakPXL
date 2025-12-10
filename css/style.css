@@ -41,6 +41,11 @@ body {
     flex-wrap: wrap;
 }
 
+.photo-link {
+    text-decoration: none;
+    display: inline-block;
+}
+
 .photo-container {
     position: relative;
     width: 150px;
